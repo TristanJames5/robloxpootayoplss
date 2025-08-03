@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Roblox Vibes</title>
+  <style>
+    body {
+      text-align: center;
+      background-color: #fdf1f1;
+      font-family: sans-serif;
+    }
+    #displayText, #randomText {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #e91e63;
+    }
+    #button1, #button2 {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+    #button1 {
+      background-color: #ffc107;
+    }
+    #button2 {
+      background-color: #03a9f4;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✨ Tara Roblox Poo ? ✨</h1>
+
+  <button id="button1">Tara Roblox Poo </button>
+  <button id="button2">Bakit Ayaw Mo 😭</button>
+
+  <div id="displayText"></div>
+  <div id="randomText"></div>
+
+  <audio id="audio1" src="graduation.mp3"></audio>
+  <audio id="audio2" src="Rob Deniel  Miss Miss Official Lyric Visualizer - Copy.mp3" loop></audio>
+
+  <script>
+    const btn1 = document.getElementById("button1");
+    const btn2 = document.getElementById("button2");
+    const text = document.getElementById("displayText");
+    const randomText = document.getElementById("randomText");
+    const gradSong = document.getElementById("audio1");
+    const missSong = document.getElementById("audio2");
+
+    let btn1Size = 16;
+
+    const hugotLines = [
+      "Superr na kita  😳",
+      "Miss na miss na kita 😭",
+      "Oiii 👀",
+      "Wag kang lumayo pls 🥺",
+      "Ang bigat ng puso ko 💔",
+      "Pakiusap... sumagot ka 😢",
+      "Lagi kang nasa isip ko 💭",
+      "Grabe na ‘to... miss na kita sobra!"
+    ];
+
+    // Delay autoplay by 2 seconds after page load
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        missSong.play();
+      }, 2000);
+    });
+
+    btn1.addEventListener("click", function() {
+      text.textContent = "Yeheyyyyyy 😍 Cute mo po!";
+      randomText.textContent = "";
+      gradSong.play();
+      missSong.pause();
+      missSong.currentTime = 0;
+    });
+
+    btn2.addEventListener("click", function() {
+      btn1Size += 5;
+      btn1.style.fontSize = btn1Size + "px";
+      text.textContent = "Bawaall umayaw... miss nakita ehhh 💔";
+
+      const randomIndex = Math.floor(Math.random() * hugotLines.length);
+      randomText.textContent = hugotLines[randomIndex];
+
+      missSong.play();
+      gradSong.pause();
+      gradSong.currentTime = 0;
+    });
+  </script>
+
+</body>
+</html>
